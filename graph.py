@@ -13,12 +13,12 @@ def GenerateBarGraphUniversity(y):
     
     for i in range(1, len(ydata)):
         ydata[i] = float(ydata[i])
-    plt.bar(xdata[1:], ydata[1:], width = 0.72,label = "Universitiesvs." + ydata[0])
+    plt.bar(xdata[1:], ydata[1:], width = 0.72,label = "Universities vs." + ydata[0])
     plt.xlabel('Universities')
     plt.ylabel(ydata[0])
-    plt.title("Universitiesvs." + ydata[0])
+    plt.title("Universities vs." + ydata[0])
     plt.legend()
-    plt.savefig("Universitiesvs." + ydata[0] + ".png")
+    plt.savefig("Universities vs." + ydata[0] + ".png")
     plt.close()
 
 for i in range(1, 6):
@@ -38,9 +38,7 @@ def GenerateBarGraphCompare(y1, y2):
     for i in range(1, len(y1data)):
         y1data[i] = float(y1data[i])
         y2data[i] = float(y2data[i])
-    plt.bar(xdata[1:], y1data[1:], width = 0.5,label = "Universitiesvs." + y1data[0] +
-     "vs"+ y2data[0])
-    plt.bar(xdata[1:], y2data[1:], width = 0.5,label = "Universitiesvs." + y1data[0] +
+    plt.bar(xdata[1:], y1data[1:], width = 0.5,label = "Universities vs." + y1data[0] +
      "vs"+ y2data[0])
     plt.xlabel('Universities')
     plt.ylabel(y1data[0])
@@ -48,4 +46,5 @@ def GenerateBarGraphCompare(y1, y2):
     plt.legend()
     plt.savefig("Universitiesvs." + y1data[0] +"vs"+ y2data[0]+ ".png")
     plt.close()
-GenerateBarGraphCompare(1,2)
+
+
