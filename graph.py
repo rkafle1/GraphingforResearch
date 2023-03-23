@@ -5,13 +5,18 @@ import pandas as pd
 def GenerateBarGraphUniversity(y): 
     xdata = []
     ydata = []
+    zdata = []
     with open('UCTransferData.csv','r') as csvfile:
         lines = csv.reader(csvfile, delimiter=',')
         for row in lines:
             xdata.append(row[0])
             ydata.append(row[y])
+            zdata.append(row[2])
     
     for i in range(1, len(ydata)):
+        if y == 3:
+            ydata[i] = float(ydata[i])/float(zdata[i])
+        
         ydata[i] = float(ydata[i])
     plt.bar(xdata[1:], ydata[1:], width = 0.72,label = "Universities vs." + ydata[0])
     plt.xlabel('Universities')
